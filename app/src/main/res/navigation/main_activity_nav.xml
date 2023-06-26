@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/homepageFragment">
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.omer.navigationcomponents.HomepageFragment"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/toTheGame"
+            app:destination="@id/gameScreen"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameScreen"
+        android:name="com.omer.navigationcomponents.GameScreen"
+        android:label="fragment_game_screen"
+        tools:layout="@layout/fragment_game_screen" >
+        <action
+            android:id="@+id/gameScreen_to_resultPage"
+            app:destination="@id/resultPage"
+            app:popUpTo="@id/gameScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultPage"
+        android:name="com.omer.navigationcomponents.ResultPage"
+        android:label="fragment_result_page"
+        tools:layout="@layout/fragment_result_page" />
+</navigation>
